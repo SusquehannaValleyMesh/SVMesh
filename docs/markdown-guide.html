@@ -1,0 +1,738 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SVMesh Markdown Guide</title>
+    <style>
+      /* From extension vscode.github */
+      /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+      .vscode-dark img[src$="\#gh-light-mode-only"],
+      .vscode-light img[src$="\#gh-dark-mode-only"],
+      .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$="\#gh-light-mode-only"],
+      .vscode-high-contrast-light img[src$="\#gh-dark-mode-only"] {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css"
+    />
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu",
+          "Droid Sans", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    </style>
+    <style>
+      .task-list-item {
+        list-style-type: none;
+      }
+
+      .task-list-item-checkbox {
+        margin-left: -20px;
+        vertical-align: middle;
+        pointer-events: none;
+      }
+    </style>
+    <style>
+      :root {
+        --color-note: #0969da;
+        --color-tip: #1a7f37;
+        --color-warning: #9a6700;
+        --color-severe: #bc4c00;
+        --color-caution: #d1242f;
+        --color-important: #8250df;
+      }
+    </style>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-note: #2f81f7;
+          --color-tip: #3fb950;
+          --color-warning: #d29922;
+          --color-severe: #db6d28;
+          --color-caution: #f85149;
+          --color-important: #a371f7;
+        }
+      }
+    </style>
+    <style>
+      .markdown-alert {
+        padding: 0.5rem 1rem;
+        margin-bottom: 16px;
+        color: inherit;
+        border-left: 0.25em solid #888;
+      }
+
+      .markdown-alert > :first-child {
+        margin-top: 0;
+      }
+
+      .markdown-alert > :last-child {
+        margin-bottom: 0;
+      }
+
+      .markdown-alert .markdown-alert-title {
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        line-height: 1;
+      }
+
+      .markdown-alert .markdown-alert-title .octicon {
+        margin-right: 0.5rem;
+        display: inline-block;
+        overflow: visible !important;
+        vertical-align: text-bottom;
+        fill: currentColor;
+      }
+
+      .markdown-alert.markdown-alert-note {
+        border-left-color: var(--color-note);
+      }
+
+      .markdown-alert.markdown-alert-note .markdown-alert-title {
+        color: var(--color-note);
+      }
+
+      .markdown-alert.markdown-alert-important {
+        border-left-color: var(--color-important);
+      }
+
+      .markdown-alert.markdown-alert-important .markdown-alert-title {
+        color: var(--color-important);
+      }
+
+      .markdown-alert.markdown-alert-warning {
+        border-left-color: var(--color-warning);
+      }
+
+      .markdown-alert.markdown-alert-warning .markdown-alert-title {
+        color: var(--color-warning);
+      }
+
+      .markdown-alert.markdown-alert-tip {
+        border-left-color: var(--color-tip);
+      }
+
+      .markdown-alert.markdown-alert-tip .markdown-alert-title {
+        color: var(--color-tip);
+      }
+
+      .markdown-alert.markdown-alert-caution {
+        border-left-color: var(--color-caution);
+      }
+
+      .markdown-alert.markdown-alert-caution .markdown-alert-title {
+        color: var(--color-caution);
+      }
+    </style>
+  </head>
+  <body class="vscode-body vscode-light">
+    <span
+      id="markdown-mermaid"
+      aria-hidden="true"
+      data-config='{"darkModeTheme":"vscode","lightModeTheme":"vscode","maxTextSize":50000,"clickDrag":"alt","showControls":"onHoverOrFocus","resizable":true,"maxHeight":""}'
+    ></span>
+    <h1 id="svmesh-markdown-guide">SVMesh Markdown Guide</h1>
+    <p>
+      This guide explains the markdown formatting features available for SVMesh pages and updates,
+      including special banner components for warnings, errors, and information.
+    </p>
+    <h2 id="basic-markdown-syntax">Basic Markdown Syntax</h2>
+    <p>SVMesh supports standard markdown formatting for all content.</p>
+    <h3 id="headers">Headers</h3>
+    <pre><code class="language-markdown"><span class="hljs-section"># H1 - Main Title</span>
+
+<span class="hljs-section">## H2 - Section Title</span>
+
+<span class="hljs-section">### H3 - Subsection Title</span>
+
+<span class="hljs-section">#### H4 - Minor Heading</span>
+</code></pre>
+    <h3 id="text-formatting">Text Formatting</h3>
+    <pre><code class="language-markdown"><span class="hljs-strong">**Bold text**</span> or <span class="hljs-strong">**bold text**</span>
+<span class="hljs-emphasis">_Italic text_</span> or <span class="hljs-emphasis">_italic text_</span>
+~~Strikethrough text~~
+<span class="hljs-code">`Inline code`</span>
+</code></pre>
+    <h3 id="links">Links</h3>
+    <pre><code class="language-markdown">[<span class="hljs-string">Link text</span>](<span class="hljs-link">https://example.com</span>)
+[<span class="hljs-string">Internal page link</span>](<span class="hljs-link">/pages/getting-started</span>)
+[<span class="hljs-string">Link with title</span>](<span class="hljs-link">https://example.com &quot;Hover title&quot;</span>)
+</code></pre>
+    <h3 id="lists">Lists</h3>
+    <p><strong>Unordered lists:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-bullet">-</span> Item one
+<span class="hljs-bullet">-</span> Item two
+<span class="hljs-bullet">  -</span> Nested item
+<span class="hljs-bullet">  -</span> Another nested item
+<span class="hljs-bullet">-</span> Item three
+</code></pre>
+    <p><strong>Ordered lists:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-bullet">1.</span> First item
+<span class="hljs-bullet">2.</span> Second item
+<span class="hljs-bullet">   1.</span> Nested item
+<span class="hljs-bullet">   2.</span> Another nested item
+<span class="hljs-bullet">3.</span> Third item
+</code></pre>
+    <p><strong>Task lists:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-bullet">-</span> [x] Completed task
+<span class="hljs-bullet">-</span> [ ] Incomplete task
+<span class="hljs-bullet">-</span> [ ] Another task
+</code></pre>
+    <h3 id="blockquotes">Blockquotes</h3>
+    <pre><code class="language-markdown"><span class="hljs-quote">&gt; This is a blockquote.</span>
+<span class="hljs-quote">&gt; It can span multiple lines.</span>
+<span class="hljs-quote">&gt;
+&gt; And have multiple paragraphs.</span>
+</code></pre>
+    <h3 id="horizontal-rules">Horizontal Rules</h3>
+    <pre><code class="language-markdown">---
+</code></pre>
+    <h3 id="tables">Tables</h3>
+    <pre><code class="language-markdown">| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
+</code></pre>
+    <p><strong>Alignment:</strong></p>
+    <pre><code class="language-markdown">| Left | Center | Right |
+| :--- | :----: | ----: |
+| L    |   C    |     R |
+</code></pre>
+    <h2 id="special-banner-components">Special Banner Components</h2>
+    <p>
+      SVMesh includes three types of special banner components for highlighting important
+      information.
+    </p>
+    <h3 id="warning-banners">Warning Banners</h3>
+    <pre><code class="language-markdown">::warning[Optional Title]
+This is a warning message that will be displayed in a yellow warning banner.
+You can use <span class="hljs-strong">**markdown**</span> inside warning banners.
+::warning
+</code></pre>
+    <p><strong>Usage:</strong></p>
+    <ul>
+      <li>Use for important notices that need attention</li>
+      <li>Yellow/amber color scheme</li>
+      <li>Warning icon automatically included</li>
+    </ul>
+    <h3 id="critical-banners">Critical Banners</h3>
+    <pre><code class="language-markdown">::critical[Important Security Notice]
+This is a critical message that will be displayed in a red error banner.
+Use for <span class="hljs-strong">**urgent**</span> information or security warnings.
+::critical
+</code></pre>
+    <p><strong>Usage:</strong></p>
+    <ul>
+      <li>Use for urgent issues, security warnings, or critical problems</li>
+      <li>Red color scheme with error styling</li>
+      <li>Error icon automatically included</li>
+    </ul>
+    <h3 id="info-banners">Info Banners</h3>
+    <pre><code class="language-markdown">::info[Pro Tip]
+This is an informational message displayed in a blue info banner.
+Perfect for tips, additional context, or helpful information.
+::info
+</code></pre>
+    <p><strong>Usage:</strong></p>
+    <ul>
+      <li>Use for helpful tips, additional context, or supplementary information</li>
+      <li>Blue color scheme</li>
+      <li>Info icon automatically included</li>
+    </ul>
+    <h3 id="banner-limitations-and-notes">Banner Limitations and Notes</h3>
+    <p><strong>Important guidelines:</strong></p>
+    <ul>
+      <li>Banners cannot be nested inside each other</li>
+      <li>Banner content supports standard markdown formatting</li>
+      <li>Keep banner content concise for maximum impact</li>
+      <li>Use an empty line before and after banners for proper rendering</li>
+      <li>Banner titles are optional but recommended for clarity</li>
+    </ul>
+    <p><strong>Incorrect usage:</strong></p>
+    <pre><code class="language-markdown">::warning[Don&#x27;t Do This]
+::info[Nested banner - this won&#x27;t work]
+Nested banners are not supported.
+::info
+::warning
+</code></pre>
+    <p><strong>Correct usage:</strong></p>
+    <pre><code class="language-markdown">::warning[First Warning]
+This is the first warning banner.
+::warning
+
+::info[Separate Info]
+This is a separate info banner with proper spacing.
+::info
+</code></pre>
+    <h3 id="banner-examples-in-context">Banner Examples in Context</h3>
+    <pre><code class="language-markdown"><span class="hljs-section"># Getting Started Guide</span>
+
+Welcome to our platform! Here&#x27;s what you need to know.
+
+::info[New User Tip]
+First-time users should start with the basic setup before moving to advanced features.
+::info
+
+<span class="hljs-section">## Important Security Information</span>
+
+::critical[Security Warning]
+Never share your private keys or authentication tokens with anyone.
+::critical
+
+<span class="hljs-section">## Common Issues</span>
+
+::warning[Known Issue]
+Some users may experience delays during peak usage hours. This is being addressed.
+::warning
+
+The rest of your markdown content continues normally...
+</code></pre>
+    <h2 id="images-and-media">Images and Media</h2>
+    <h3 id="basic-image-syntax">Basic Image Syntax</h3>
+    <pre><code class="language-markdown">![<span class="hljs-string">Alt text</span>](<span class="hljs-link">image-filename.jpg</span>)
+![<span class="hljs-string">Alt text with title</span>](<span class="hljs-link">image-filename.jpg &quot;Image title&quot;</span>)
+</code></pre>
+    <h3 id="image-storage">Image Storage</h3>
+    <p><strong>Client-side images:</strong></p>
+    <p>Place images in the appropriate directory:</p>
+    <pre><code>app/public/images/
+</code></pre>
+    <p>Reference them in markdown:</p>
+    <pre><code class="language-markdown">![<span class="hljs-string">Device setup</span>](<span class="hljs-link">/images/device-setup.jpg</span>)
+</code></pre>
+    <h3 id="image-optimization">Image Optimization</h3>
+    <p><strong>Best practices:</strong></p>
+    <ul>
+      <li>Use WebP format when possible for smaller file sizes</li>
+      <li>Compress images before uploading</li>
+      <li>Recommended max width: 1920px for hero images, 800px for inline images</li>
+      <li>
+        Use descriptive filenames: <code>antenna-setup-diagram.jpg</code> not
+        <code>img001.jpg</code>
+      </li>
+      <li>Always include meaningful alt text for accessibility</li>
+    </ul>
+    <p><strong>Example with proper alt text:</strong></p>
+    <pre><code class="language-markdown">![<span class="hljs-string">T1000-E device showing the power button location on the right side</span>](<span class="hljs-link">/images/t1000e-power-button.jpg</span>)
+</code></pre>
+    <h3 id="hero-images">Hero Images</h3>
+    <p>Hero images are configured in frontmatter and displayed at the top of pages:</p>
+    <pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Getting Started&quot;</span>
+<span class="hljs-attr">heroImage:</span> <span class="hljs-string">&quot;mesh-network-hero.jpg&quot;</span>
+<span class="hljs-attr">attributionUrl:</span> <span class="hljs-string">&quot;https://unsplash.com/photos/example&quot;</span>
+<span class="hljs-meta">---
+</span></code></pre>
+    <p><strong>Hero image guidelines:</strong></p>
+    <ul>
+      <li>Dimensions: 1920x600px recommended</li>
+      <li>Format: JPG or WebP</li>
+      <li>File size: Keep under 500KB</li>
+      <li>Choose images with good contrast for text overlay</li>
+      <li>Always provide attribution for stock photos</li>
+    </ul>
+    <h2 id="code-blocks">Code Blocks</h2>
+    <h3 id="inline-code">Inline Code</h3>
+    <p>Use single backticks for inline code:</p>
+    <pre><code class="language-markdown">The <span class="hljs-code">`configure()`</span> function accepts a <span class="hljs-code">`ConfigObject`</span> parameter.
+</code></pre>
+    <h3 id="code-blocks-with-syntax-highlighting">Code Blocks with Syntax Highlighting</h3>
+    <p>Use triple backticks with language identifier:</p>
+    <pre><code class="language-markdown"><span class="hljs-code">```javascript
+const device = new MeshtasticDevice();
+device.connect();
+```</span>
+</code></pre>
+    <p><strong>Supported languages:</strong></p>
+    <ul>
+      <li><code>javascript</code> / <code>js</code></li>
+      <li><code>typescript</code> / <code>ts</code></li>
+      <li><code>python</code></li>
+      <li><code>bash</code> / <code>shell</code></li>
+      <li><code>json</code></li>
+      <li><code>yaml</code></li>
+      <li><code>markdown</code> / <code>md</code></li>
+      <li><code>html</code></li>
+      <li><code>css</code></li>
+      <li><code>csharp</code> / <code>cs</code></li>
+    </ul>
+    <h3 id="code-block-examples">Code Block Examples</h3>
+    <p><strong>JavaScript:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-code">```javascript
+function setupChannel(name, frequency) {
+  return {
+    name: name,
+    frequency: frequency,
+    psk: generatePSK(),
+  };
+}
+```</span>
+</code></pre>
+    <p><strong>Python:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-code">```python
+def configure_device(device_id, settings):
+    device = MeshtasticDevice(device_id)
+    device.apply_settings(settings)
+    return device.status
+```</span>
+</code></pre>
+    <p><strong>Command line:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-code">```bash
+# Install Meshtastic CLI
+pip install meshtastic
+
+# Check device connection
+meshtastic --info
+```</span>
+</code></pre>
+    <p><strong>Configuration files:</strong></p>
+    <pre><code class="language-markdown"><span class="hljs-code">```yaml
+device:
+  name: &quot;Node-001&quot;
+  region: &quot;US&quot;
+  role: &quot;ROUTER&quot;
+channels:
+  - name: &quot;LongFast&quot;
+    frequency: 915.0
+```</span>
+</code></pre>
+    <h2 id="frontmatter-configuration">Frontmatter Configuration</h2>
+    <h3 id="pages">Pages</h3>
+    <p>Pages use frontmatter for configuration and metadata:</p>
+    <pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Page Title&quot;</span>
+<span class="hljs-attr">subtitle:</span> <span class="hljs-string">&quot;Optional subtitle for hero section&quot;</span>
+<span class="hljs-attr">heroImage:</span> <span class="hljs-string">&quot;image-filename.jpg&quot;</span>
+<span class="hljs-attr">attributionUrl:</span> <span class="hljs-string">&quot;https://source-attribution-url.com&quot;</span>
+<span class="hljs-meta">---
+</span></code></pre>
+    <p><strong>Fields:</strong></p>
+    <ul>
+      <li><strong>title</strong> (required): Main page title</li>
+      <li><strong>subtitle</strong> (optional): Displayed in hero section</li>
+      <li><strong>heroImage</strong> (optional): Background image for hero section</li>
+      <li><strong>attributionUrl</strong> (optional): Attribution link for hero image</li>
+    </ul>
+    <h3 id="updates">Updates</h3>
+    <p>Updates require specific frontmatter for proper display:</p>
+    <pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Update Title&quot;</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;YYYY-MM-DD&quot;</span>
+<span class="hljs-attr">summary:</span> <span class="hljs-string">&quot;Brief description of the update content&quot;</span>
+<span class="hljs-attr">tag:</span> <span class="hljs-string">&quot;category-name&quot;</span>
+<span class="hljs-meta">---
+</span></code></pre>
+    <p><strong>Fields:</strong></p>
+    <ul>
+      <li><strong>title</strong> (required): Update title for listings and display</li>
+      <li><strong>date</strong> (required): Publication date in YYYY-MM-DD format</li>
+      <li><strong>summary</strong> (required): Brief summary for update listings</li>
+      <li><strong>tag</strong> (optional): Category tag for filtering and organization</li>
+    </ul>
+    <h2 id="pages-and-updates">Pages and Updates</h2>
+    <h3 id="page-structure">Page Structure</h3>
+    <p>Pages have static content and get their own listing in the header menu:</p>
+    <pre><code>/pages/page-name.md
+</code></pre>
+    <p><strong>Example page:</strong></p>
+    <pre><code class="language-markdown">---
+title: &quot;Channel Settings Guide&quot;
+<span class="hljs-section">subtitle: &quot;Configure your Meshtastic device channels&quot;
+---</span>
+
+<span class="hljs-section"># Channel Configuration</span>
+
+This guide covers how to set up and configure channels...
+
+::info[Quick Start]
+Most users can use the default channel settings for basic operation.
+::info
+
+<span class="hljs-section">## Basic Setup</span>
+
+<span class="hljs-bullet">1.</span> Open the Meshtastic app
+<span class="hljs-bullet">2.</span> Navigate to channel settings
+   ...
+</code></pre>
+    <h3 id="update-structure">Update Structure</h3>
+    <p>
+      Updates are time-sensitive posts like news, announcements, or community updates, and show up
+      on the home page:
+    </p>
+    <pre><code>/updates/update-filename.md
+</code></pre>
+    <p><strong>Example update:</strong></p>
+    <pre><code class="language-markdown">---
+title: &quot;Community Meeting Scheduled&quot;
+date: &quot;2025-12-15&quot;
+summary: &quot;Join us for our monthly community meeting to discuss network improvements and new features.&quot;
+<span class="hljs-section">tag: &quot;community&quot;
+---</span>
+
+<span class="hljs-section"># Monthly Community Meeting</span>
+
+We&#x27;re excited to announce our next community meeting...
+</code></pre>
+    <h2 id="best-practices">Best Practices</h2>
+    <ol>
+      <li><strong>Use descriptive headings</strong> - Make content scannable</li>
+      <li><strong>Break up long sections</strong> - Use subheadings every few paragraphs</li>
+      <li>
+        <strong>Include relevant banners</strong> - Highlight important information appropriately
+      </li>
+      <li><strong>Front-load important information</strong> - Put key points early</li>
+      <li>
+        <strong>Use active voice</strong> - &quot;Configure your device&quot; vs &quot;Your device
+        should be configured&quot;
+      </li>
+      <li><strong>Include examples</strong> - Show practical applications</li>
+      <li><strong>Link to related content</strong> - Help users find additional information</li>
+    </ol>
+    <h3 id="banner-usage-guidelines">Banner Usage Guidelines</h3>
+    <ol>
+      <li><strong>Don't overuse banners</strong> - They lose impact if used too frequently</li>
+      <li>
+        <strong>Choose appropriate types</strong>:
+        <ul>
+          <li><code>::info</code> for helpful tips and additional context</li>
+          <li><code>::warning</code> for important notices and cautions</li>
+          <li><code>::critical</code> for urgent issues and security warnings</li>
+        </ul>
+      </li>
+      <li><strong>Keep banner content concise</strong> - Long banners become hard to read</li>
+      <li><strong>Use markdown inside banners</strong> - Enhance readability with formatting</li>
+    </ol>
+    <h3 id="frontmatter-best-practices">Frontmatter Best Practices</h3>
+    <p><strong>For Pages:</strong></p>
+    <ul>
+      <li>Keep titles concise but descriptive</li>
+      <li>Use subtitles to provide additional context</li>
+      <li>Ensure hero images are optimized for web use</li>
+      <li>Provide an attribution URL for any images sourced from the Internet.</li>
+    </ul>
+    <p><strong>For Updates:</strong></p>
+    <ul>
+      <li>Use consistent date formatting (YYYY-MM-DD)</li>
+      <li>Write compelling summaries for feed listings</li>
+      <li>Use consistent tag naming (lowercase, hyphenated)</li>
+    </ul>
+    <h3 id="file-organization">File Organization</h3>
+    <pre><code>pages/
+├── getting-started.md      # Main guides
+├── recommended-settings.md # Specific topics
+└── troubleshooting.md      # Support content
+
+updates/
+├── community-meeting.md    # Descriptive names
+├── version-2-release.md    # Version releases
+└── welcome-to-svmesh.md    # Announcements
+</code></pre>
+    <p>
+      <strong>Note:</strong> Use descriptive filenames rather than date prefixes. Dates should be
+      specified in the frontmatter <code>date</code> field.
+    </p>
+    <h3 id="common-formatting-examples">Common Formatting Examples</h3>
+    <p><strong>Tables</strong>:</p>
+    <pre><code class="language-markdown">| Device  | Battery Life | GPS | Price |
+| ------- | ------------ | --- | ----- |
+| T1000-E | 7 days       | Yes | $89   |
+| R1 Neo  | 5 days       | Yes | $129  |
+</code></pre>
+    <p><strong>Task Lists</strong>:</p>
+    <pre><code class="language-markdown"><span class="hljs-bullet">-</span> [x] Complete basic setup
+<span class="hljs-bullet">-</span> [x] Configure channels
+<span class="hljs-bullet">-</span> [ ] Set up encryption
+<span class="hljs-bullet">-</span> [ ] Test messaging
+</code></pre>
+    <p><strong>Complex Example</strong>:</p>
+    <pre><code class="language-markdown"><span class="hljs-section"># Device Configuration</span>
+
+::info[Before You Start]
+Make sure your device is fully charged and connected to the Meshtastic app.
+::info
+
+<span class="hljs-section">## Step 1: Basic Setup</span>
+
+<span class="hljs-bullet">1.</span> Open the Meshtastic app
+<span class="hljs-bullet">2.</span> Select your device from the list
+
+::warning[Connection Issues]
+If your device doesn&#x27;t appear, try resetting the Bluetooth connection.
+::warning
+
+<span class="hljs-section">## Step 2: Channel Configuration</span>
+
+Configure your channels using these settings:
+
+| Setting   | Value      | Notes           |
+| --------- | ---------- | --------------- |
+| Name      | &quot;LongFast&quot; | Default channel |
+| Frequency | 915MHz     | US frequency    |
+
+::critical[Important]
+Never use channels that interfere with emergency services.
+::critical
+
+Your device is now ready for mesh networking!
+</code></pre>
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <h3 id="common-markdown-issues">Common Markdown Issues</h3>
+    <p><strong>Banners not rendering:</strong></p>
+    <pre><code class="language-markdown">Incorrect - missing closing tag:
+::warning[Important]
+This banner won&#x27;t render properly.
+
+Correct:
+::warning[Important]
+This banner will render correctly.
+::warning
+</code></pre>
+    <p><strong>Banners not rendering - typo in tag:</strong></p>
+    <pre><code class="language-markdown">Incorrect - typo in closing tag:
+::warning[Important]
+Banner content here.
+::warnign
+
+Correct:
+::warning[Important]
+Banner content here.
+::warning
+</code></pre>
+    <p><strong>Images not displaying:</strong></p>
+    <pre><code class="language-markdown">Incorrect - wrong path:
+![<span class="hljs-string">Device</span>](<span class="hljs-link">device.jpg</span>)
+
+Correct - path from public directory:
+![<span class="hljs-string">Device</span>](<span class="hljs-link">/images/device.jpg</span>)
+</code></pre>
+    <p><strong>Code blocks not highlighting:</strong></p>
+    <pre><code class="language-markdown">Incorrect - unsupported language identifier:
+
+<span class="hljs-code">```javascipt
+const x = 1;
+```</span>
+
+Correct:
+
+<span class="hljs-code">```javascript
+const x = 1;
+```</span>
+</code></pre>
+    <p><strong>Tables not rendering:</strong></p>
+    <pre><code class="language-markdown">Incorrect - missing separator row:
+| Header 1 | Header 2 |
+| Data 1 | Data 2 |
+
+Correct:
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Data 1 | Data 2 |
+</code></pre>
+    <p><strong>Links not working:</strong></p>
+    <pre><code class="language-markdown">Incorrect - missing protocol:
+[<span class="hljs-string">Visit our site</span>](<span class="hljs-link">example.com</span>)
+
+Correct:
+[<span class="hljs-string">Visit our site</span>](<span class="hljs-link">https://example.com</span>)
+</code></pre>
+    <h3 id="frontmatter-issues">Frontmatter Issues</h3>
+    <p><strong>Updates not appearing on home page:</strong></p>
+    <pre><code class="language-yaml"><span class="hljs-attr">Incorrect - missing required fields:</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;My Update&quot;</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">Correct - all required fields:</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;My Update&quot;</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;2026-01-05&quot;</span>
+<span class="hljs-attr">summary:</span> <span class="hljs-string">&quot;Brief description of the update&quot;</span>
+<span class="hljs-meta">---
+</span></code></pre>
+    <p><strong>Date format errors:</strong></p>
+    <pre><code class="language-yaml"><span class="hljs-attr">Incorrect formats:</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;Jan 5, 2026&quot;</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;05-01-2026&quot;</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;1/5/2026&quot;</span>
+
+<span class="hljs-attr">Correct format:</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;2026-01-05&quot;</span>
+</code></pre>
+    <h2 id="quick-reference">Quick Reference</h2>
+    <h3 id="banner-syntax-cheat-sheet">Banner Syntax Cheat Sheet</h3>
+    <pre><code class="language-markdown">::info[Title]
+Content here. Supports <span class="hljs-strong">**markdown**</span>.
+::info
+
+::warning[Title]
+Content here. Supports <span class="hljs-strong">**markdown**</span>.
+::warning
+
+::critical[Title]
+Content here. Supports <span class="hljs-strong">**markdown**</span>.
+::critical
+</code></pre>
+    <h3 id="page-frontmatter-template">Page Frontmatter Template</h3>
+    <pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Your Page Title&quot;</span>
+<span class="hljs-attr">subtitle:</span> <span class="hljs-string">&quot;Optional subtitle&quot;</span>
+<span class="hljs-attr">heroImage:</span> <span class="hljs-string">&quot;image-name.jpg&quot;</span>
+<span class="hljs-attr">attributionUrl:</span> <span class="hljs-string">&quot;https://source-url.com&quot;</span>
+<span class="hljs-meta">---
+</span></code></pre>
+    <h3 id="update-frontmatter-template">Update Frontmatter Template</h3>
+    <pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Update Title&quot;</span>
+<span class="hljs-attr">date:</span> <span class="hljs-string">&quot;YYYY-MM-DD&quot;</span>
+<span class="hljs-attr">summary:</span> <span class="hljs-string">&quot;Brief description for listings&quot;</span>
+<span class="hljs-attr">tag:</span> <span class="hljs-string">&quot;category-name&quot;</span>
+<span class="hljs-meta">---
+</span></code></pre>
+    <h3 id="common-text-formatting">Common Text Formatting</h3>
+    <pre><code class="language-markdown"><span class="hljs-strong">**Bold**</span>
+<span class="hljs-emphasis">_Italic_</span>
+<span class="hljs-code">`Code`</span>
+[<span class="hljs-string">Link</span>](<span class="hljs-link">url</span>)
+![<span class="hljs-string">Image</span>](<span class="hljs-link">path</span>)
+</code></pre>
+    <h3 id="file-naming-conventions">File Naming Conventions</h3>
+    <p><strong>Pages:</strong></p>
+    <pre><code>pages/getting-started.md
+pages/recommended-settings.md
+pages/knowledgebase/device-guide.md
+</code></pre>
+    <p><strong>Updates:</strong></p>
+    <pre><code>updates/welcome-to-svmesh.md
+updates/community-meeting.md
+updates/version-2-release.md
+</code></pre>
+    <p><strong>Images:</strong></p>
+    <pre><code>app/public/images/hero-mesh-network.jpg
+app/public/images/device-setup-01.jpg
+</code></pre>
+
+    <script
+      async
+      src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"
+    ></script>
+  </body>
+</html>
