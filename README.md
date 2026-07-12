@@ -15,14 +15,13 @@ The upcoming website for the Susquehanna Valley Mesh, serving the centeral Penns
 **Content Pipeline:**
 
 - Build-time content sync from `content/pages/` and `content/updates/`
-- Generated static indexes in `app/public/content/index/`
+- Generates static indexes in `app/public/content/index/`
 - Knowledgebase metadata parsed from markdown frontmatter
 
 **Infrastructure:**
 
-- Dockerized static site build and serve flow
-- Nginx static hosting with SPA fallback
-- Support for SSL/TLS termination behind external reverse proxies
+- Dockerized static site build
+- Nginx static hosting
 
 ## Building SVMesh
 
@@ -53,15 +52,11 @@ svmesh/
 
 ### Environment Variables
 
-Create a `.env` file by copying `.env.example` and update it for your configuration:
+The only supported environment variable is for the NGINX port, aptly-named `NGINX_PORT`.
 
 ```bash
-# Domain Configuration
-DOMAIN=your-domain.com
-
 # Nginx Port
 NGINX_PORT=8081
-
 ...
 ```
 
