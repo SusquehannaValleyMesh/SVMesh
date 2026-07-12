@@ -11,6 +11,7 @@ interface HeroSectionProps {
   rightImage?: string;
   rightImageAlt?: string;
   attributionUrl?: string;
+  imageCredit?: string;
 }
 
 export default function HeroSection({
@@ -23,6 +24,7 @@ export default function HeroSection({
   rightImage,
   rightImageAlt = "",
   attributionUrl = "",
+  imageCredit = "",
 }: HeroSectionProps) {
   return (
     <Box
@@ -140,7 +142,7 @@ export default function HeroSection({
             },
           }}
         >
-          Image Credit
+          {imageCredit}
         </Link>
       </Box>
     </Box>

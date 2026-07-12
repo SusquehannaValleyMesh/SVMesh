@@ -254,6 +254,7 @@ Hero images are configured in frontmatter and displayed at the top of pages:
 title: "Getting Started"
 heroImage: "mesh-network-hero.jpg"
 attributionUrl: "https://unsplash.com/photos/example"
+imageCredit: "Unsplash"
 ---
 ```
 
@@ -690,6 +691,7 @@ title: "Your Page Title"
 subtitle: "Optional subtitle"
 heroImage: "image-name.jpg"
 attributionUrl: "https://source-url.com"
+imageCredit: "Source"
 ---
 ```
 

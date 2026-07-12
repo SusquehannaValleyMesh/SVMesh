@@ -9,6 +9,7 @@ interface SimpleHeroProps {
   overlay?: boolean;
   attributionUrl?: string;
   backgroundPosition?: string;
+  imageCredit?: string;
 }
 
 export default function SimpleHero({
@@ -19,6 +20,7 @@ export default function SimpleHero({
   overlay = true,
   attributionUrl = "https://creativecommons.org/",
   backgroundPosition = "center",
+  imageCredit = "Image Credit",
 }: SimpleHeroProps) {
   return (
     <Box
@@ -108,7 +110,7 @@ export default function SimpleHero({
             },
           }}
         >
-          Image Credit
+          {imageCredit}
         </Link>
       </Box>
     </Box>
