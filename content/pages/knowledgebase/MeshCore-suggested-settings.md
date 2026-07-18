@@ -43,11 +43,11 @@ Steps 1 through 3 can be done from the GUI or CLI
 1. Set advert path hashes to 2-byte. `set path.hash.mode 1`
 1. Set minimal loop detection. `set loop.detect minimal`
 1. Enable powersaving (ONLY do on solar nodes!). `powersaving on`
-1. Set advert interval. `set flood.advert.interval 72` (openHop max is 48)
+1. Set advert interval. `set flood.advert.interval 72`
 1. Allow periodic radio resets. `set agc.reset.interval 4` (not available in openHop)
 1. openHop ONLY: Run CAD Calibration, you MUST run this in the FINAL node location!
 1. Send multiple ACKs. `set multi.acks 1` (not available in openHop)
-1. Only send adverts 16 hops. `set flood.max.advert 16`
+1. Only send adverts 16 hops. `set flood.max.advert 16` (not available in openHop)
 1. Set rxdelay. `set rxdelay 3`
 1. Set txdelay options
    1. Towers/Mountains: `set txdelay 2` and `set direct.txdelay 2`
