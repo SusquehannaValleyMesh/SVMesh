@@ -169,6 +169,16 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
         {children}
       </StyledText>
     ),
+    strong: ({ children }: any) => (
+      <Box component="strong" sx={{ fontWeight: 600 }}>
+        {children}
+      </Box>
+    ),
+    em: ({ children }: any) => (
+      <Box component="em" sx={{ fontStyle: "italic", fontWeight: 500 }}>
+        {children}
+      </Box>
+    ),
     blockquote: ({ children }: any) => (
       <Box
         sx={{
@@ -409,7 +419,10 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
                     </Box>
                   ),
                   em: ({ children }: any) => (
-                    <Box component="em" sx={{ color: "inherit" }}>
+                    <Box
+                      component="em"
+                      sx={{ color: "inherit", fontStyle: "italic", fontWeight: 500 }}
+                    >
                       {children}
                     </Box>
                   ),
@@ -454,7 +467,11 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
                   ),
                   summary: ({ children }: any) => (
                     <Box component="summary">
-                      <StyledText type="body" component="span" sx={{ fontWeight: 600, color: "inherit" }}>
+                      <StyledText
+                        type="body"
+                        component="span"
+                        sx={{ fontWeight: 600, color: "inherit" }}
+                      >
                         {children}
                       </StyledText>
                     </Box>
