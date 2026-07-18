@@ -12,7 +12,7 @@ export const dashboardImagePaths = {
   malla: publicImage("malla-dash.png"),
   meshMonitor: publicImage("meshmonitor-dash.png"),
   meshView: publicImage("meshview-dash.png"),
-  backbone: publicImage("susmesh-dash.jpg"),
+  backbone: publicImage("susmesh-map.webp"),
 };
 
 export const discordLogoImage = publicImage("discord.png");
