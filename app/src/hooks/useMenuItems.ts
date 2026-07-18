@@ -14,9 +14,9 @@ const STATIC_PAGES = [
   "home",
 ];
 const STATIC_MENU_ITEMS: MenuItem[] = [
+  { name: "Dashboards", href: "/dashboards" },
   { name: "Getting Started", href: "/getting-started" },
   { name: "Recommended Settings", href: "/recommended-settings" },
-  { name: "Dashboards", href: "/dashboards" },
   { name: "Knowledgebase", href: "/knowledgebase" },
   { name: "Socials", href: "/socials" },
 ];
