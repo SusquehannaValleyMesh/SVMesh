@@ -23,13 +23,6 @@ const dashboards = [
     image: dashboardImagePaths.malla,
   },
   {
-    title: "Mesh Monitor",
-    description: "Map of nodes seen in the Susquehanna Valley mesh network.",
-    url: "https://meshmonitor.susme.sh/#nodes",
-    id: "node-monitor",
-    image: dashboardImagePaths.meshMonitor,
-  },
-  {
     title: "MeshView",
     description: "Simple map of nodes and conversations in the Susquehanna Valley mesh network.",
     url: "https://meshview.susme.sh/map",
@@ -40,7 +33,7 @@ const dashboards = [
     title: "Backbone Map",
     description:
       "Current and upcoming backbone nodes on the mesh network, showing the infrastructure that maintains connectivity across the Susquehanna Valley.",
-    url: "https://susme.sh/",
+    url: "https://map.susme.sh/",
     id: "backbone-map",
     image: dashboardImagePaths.backbone,
   },
@@ -82,8 +75,7 @@ export default function Dashboards() {
               display: "grid",
               gridTemplateColumns: {
                 xs: "1fr",
-                sm: "repeat(2, 1fr)",
-                md: "repeat(4, 1fr)",
+                md: "repeat(3, 1fr)",
               },
               gap: { xs: 2, md: 3 },
             }}
