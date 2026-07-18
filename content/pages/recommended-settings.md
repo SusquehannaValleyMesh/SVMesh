@@ -1,11 +1,17 @@
 ---
-title: "Recommended Settings"
+title: "Meshtastic Recommended Settings"
 subtitle: ""
 heroImage: "tbeam.jpg"
 attributionUrl: "https://meshtastic.org/"
 ---
 
 # Recommended Settings
+
+After flashing, power on your node. Before it can transmit, you must set your regulatory region. Connect to your node using the [Meshtastic web client](https://client.meshtastic.org/) or the Meshtastic companion app on your mobile device. Navigate to `Settings > LoRa` and set your region to `United States`. **After setting the region, the node will reboot and begin transmitting. Ensure your antenna remains connected.**
+
+::warning[About HAM Mode]
+A lot of newcomers get intrigued with running Meshtastic in HAM mode. Not only does this mode require an amateur license to use, it also is incompatible with our current mesh due to the lack of encryption. Do not enable HAM (Amateur radio) mode unless you know what you're doing.
+::warning
 
 The Susquehanna Valley Mesh is currently operating on the default `LongFast` LoRa preset, so no additional channel configuration is required to connect at this time. This will change in the near future, as we are experiencing increased channel utilization and congestion on the current preset. Join us on our [socials](/socials) to stay informed as we begin planning and executing a migration to a new preset.
 
