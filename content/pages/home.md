@@ -7,17 +7,21 @@ rightImageAlt: "Meshtastic Powered"
 attributionUrl: ""
 ---
 
+## Who are we?
+
+We are the Susquehanna Valley Mesh. We aim to service the Susquehanna Valley with Meshtastic and MeshCore coverage, powered with low-power LoRa radios, building a robust decentralized network. [Looking for a different mesh in Pennsylvania?](https://pame.sh)
+
 ## What is a mesh?
 
 A mesh is a decentralized network of devices that communicate directly with one another, without relying on a central hub or an internet connection. This architecture provides resilience, allowing the network to adapt and reroute traffic even when individual nodes go offline.
 
-We build our mesh using low-power, long-range radio hardware, enabling communication across distances that traditional technologies like Wi-Fi or Bluetooth cannot reach. Our network is powered by the Meshtastic open-source project, which does not require an amateur radio license to use.
+We build our mesh using low-power, long-range radio hardware, enabling communication across distances that traditional technologies like Wi-Fi or Bluetooth cannot reach. Our network is powered by the Meshtastic and MeshCore open-source projects, which do *not* require an amateur radio license to use.
 
 ## What can it be used for?
 
 As a community, the mesh is primarily used for casual communication. We regularly check in and say hello, including daily community check-ins at 9 pm. Beyond this, members have found a variety of private and experimental use cases, such as low-power position tracking, backup communications, and remote sensor data collection.
 
-While Meshtastic is not a replacement for emergency communication systems, it can serve as a useful backup to more robust options like amateur radio. Above all, the mesh is a platform for experimentation and learning, whether that involves infrastructure planning, CAD design, firmware development, or software integration.
+While our meshes are not a replacement for emergency communication systems, they can serve as a useful backup to more robust options like amateur radio. Above all, the mesh is a platform for experimentation and learning, whether that involves infrastructure planning, CAD design, firmware development, or software integration.
 
 ## How do I get started?
 
