@@ -57,4 +57,4 @@ Ensure that a radio antenna is connected to your node before powering it on for 
 
 It is strongly recommended to flash your device with the latest firmware before first boot. To do so, visit the [Meshtastic web flasher](https://flasher.meshtastic.org/) or the [MeshCore flasher](https://meshcore.io/flasher), and ensure you select the correct board for your device.
 
-Next, visit our [Meshtastic Recommended Settings](/recommended-settings), or [MeshCore Recommended Settings](/knowledgebase/MeshCore-suggested-settings) knowledgebase article to apply the current configuration required to join the mesh. After these settings are applied, your node will be fully connected and ready for use. If you have any questions, be sure to reach out on our [socials](/socials)! We are happy to help.
+Next, visit our [Meshtastic Settings](/recommended-settings) or [MeshCore Settings](/meshcore-settings) guides to apply the current configuration required to join the mesh. After these settings are applied, your node will be fully connected and ready for use. If you have any questions, be sure to reach out on our [socials](/socials)! We are happy to help.
