@@ -7,7 +7,8 @@ export interface MenuItem {
 
 const STATIC_PAGES = [
   "getting-started",
-  "recommended-settings",
+  "meshtastic-settings",
+  "meshcore-settings",
   "dashboards",
   "knowledgebase",
   "socials",
@@ -16,7 +17,8 @@ const STATIC_PAGES = [
 const STATIC_MENU_ITEMS: MenuItem[] = [
   { name: "Dashboards", href: "/dashboards" },
   { name: "Getting Started", href: "/getting-started" },
-  { name: "Recommended Settings", href: "/recommended-settings" },
+  { name: "Meshtastic Settings", href: "/meshtastic-settings" },
+  { name: "Meshcore Settings", href: "/meshcore-settings" },
   { name: "Knowledgebase", href: "/knowledgebase" },
   { name: "Socials", href: "/socials" },
 ];
