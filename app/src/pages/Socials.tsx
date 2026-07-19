@@ -1,77 +1,8 @@
 import { Card, Box, Stack } from "@mui/material";
 import { SimpleHero, PageSection, StyledText } from "../components/ui";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import { discordLogoImage, sharedHeroImage } from "../config/images";
 import { SOCIAL_LINKS } from "../config/social";
-
-function DiscordIcon() {
-  return (
-    <Box
-      component="img"
-      src={discordLogoImage}
-      alt="Discord"
-      sx={{ width: 80, height: 80, objectFit: "contain" }}
-    />
-  );
-}
-
-function SocialLogoCard({
-  title,
-  href,
-  icon,
-}: {
-  title: string;
-  href: string;
-  icon: React.ReactNode;
-}) {
-  return (
-    <Card
-      component="a"
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        borderRadius: 2,
-        boxShadow: 3,
-        p: 3,
-        minWidth: 200,
-        textAlign: "center",
-        transition: "transform 0.3s ease, boxShadow 0.3s ease",
-        cursor: "pointer",
-        textDecoration: "none",
-        color: "inherit",
-        "&:hover": {
-          transform: "translateY(-4px)",
-          boxShadow: 6,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          mb: 2,
-        }}
-      >
-        {icon}
-      </Box>
-
-      <StyledText
-        type="heading"
-        component="h3"
-        sx={{
-          m: 0,
-        }}
-      >
-        {title}
-      </StyledText>
-    </Card>
-  );
-}
+import SocialCard from "../components/ui/SocialCard";
 
 export default function Socials() {
   return (
@@ -104,15 +35,15 @@ export default function Socials() {
               flexWrap: "wrap",
             }}
           >
-            <SocialLogoCard
+            <SocialCard
               title="Discord Server"
               href={SOCIAL_LINKS.discord}
-              icon={<DiscordIcon />}
+              imgSrc="/images/discord.png"
             />
-            <SocialLogoCard
+            <SocialCard
               title="Facebook Group"
               href={SOCIAL_LINKS.facebook}
-              icon={<FacebookIcon sx={{ fontSize: 80 }} />}
+              imgSrc="/images/facebook.png"
             />
           </Box>
 
