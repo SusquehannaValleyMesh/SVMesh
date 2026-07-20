@@ -96,6 +96,7 @@ export default function MarkdownPage() {
         subtitle={metadata.subtitle || ""}
         backgroundPosition="center 70%"
         attributionUrl={metadata.attributionUrl}
+        imageCredit={metadata.imageCredit || ""}
       />
       <PageSection>
         <MarkdownContent content={content} />

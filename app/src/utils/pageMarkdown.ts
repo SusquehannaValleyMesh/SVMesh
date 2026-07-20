@@ -5,6 +5,7 @@ export interface PageMetadata {
   rightImage?: string;
   rightImageAlt?: string;
   attributionUrl?: string;
+  imageCredit?: string;
 }
 
 export interface ParsedPage {

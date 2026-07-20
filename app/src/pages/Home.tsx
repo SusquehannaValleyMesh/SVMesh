@@ -68,6 +68,7 @@ export default function Home() {
         rightImage={metadata.rightImage ? contentImageMap[metadata.rightImage] : undefined}
         rightImageAlt={metadata.rightImageAlt || ""}
         attributionUrl={metadata.attributionUrl || ""}
+        imageCredit={metadata.imageCredit || ""}
       />
 
       <PageSection>
