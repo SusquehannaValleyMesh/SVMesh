@@ -5,5 +5,5 @@
 
 export const SOCIAL_LINKS = {
   discord: import.meta.env.VITE_DISCORD_URL || "https://discord.gg/svmesh",
-  facebook: import.meta.env.VITE_FACEBOOK_URL || "https://www.facebook.com/groups/svmesh",
+  facebook: import.meta.env.VITE_FACEBOOK_URL || "https://www.facebook.com/groups/415940761025166",
 };

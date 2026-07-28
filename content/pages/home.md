@@ -11,7 +11,7 @@ attributionUrl: ""
 We are the Susquehanna Valley Mesh. We aim to service the Susquehanna Valley with Meshtastic and MeshCore coverage, powered with low-power LoRa radios, building a robust decentralized network. We're active on Discord and Facebook, come join the community!
 
 ::social[Facebook Group]
-href: https://www.facebook.com/groups/svmesh
+href: https://www.facebook.com/groups/415940761025166
 imgSrc: /images/facebook.png
 ::social
 
