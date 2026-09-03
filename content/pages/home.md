@@ -16,7 +16,7 @@ imgSrc: /images/facebook.png
 ::social
 
 ::social[Discord Server]
-href: https://discord.gg/svmesh
+href: https://discord.gg/MhEZzxbKf6
 icon: /images/discord.png
 ::social
 
