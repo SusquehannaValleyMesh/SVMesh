@@ -14,8 +14,9 @@ The upcoming website for the Susquehanna Valley Mesh, serving the centeral Penns
 
 **Content Pipeline:**
 
-- Build-time content sync from `content/pages/` and `content/updates/`
-- Generates static indexes in `app/public/content/index/`
+- The production container downloads the latest content from GitHub at startup and every four hours. If GitHub is unreachable, a Docker volume retains the last successful download.
+- Generates static indexes in the container from the downloaded Markdown
+- Local development syncs from `content/pages/` and `content/updates/`
 - Knowledgebase metadata parsed from markdown frontmatter
 
 **Infrastructure:**
@@ -52,12 +53,17 @@ svmesh/
 
 ### Environment Variables
 
-The only supported environment variable is for the NGINX port, aptly-named `NGINX_PORT`.
+`NGINX_PORT` controls the published port. `SVMESH_CONTENT_REPOSITORY` and
+`SVMESH_CONTENT_BRANCH` select the GitHub source used to refresh content on
+container startup.
 
 ```bash
-# Nginx Port
+# Nginx port
 NGINX_PORT=8081
-...
+
+# Runtime content source
+SVMESH_CONTENT_REPOSITORY=SusquehannaValleyMesh/SVMesh
+SVMESH_CONTENT_BRANCH=main
 ```
 
 ### Application Settings

@@ -84,16 +84,21 @@ Expected headers:
 - ✅ Content-Security-Policy
 - ✅ Referrer-Policy
 
-## Step 6: Add Content (3 minutes)
+## Step 6: Refresh Content
+
+The container downloads the latest pages and updates from the `main` branch of
+`SusquehannaValleyMesh/SVMesh` at startup and every four hours. Restart the
+service to refresh content immediately without rebuilding the image. The last
+successful download is kept in a Docker volume and remains available if GitHub
+cannot be reached:
 
 ```bash
-# Add your markdown files
-cp your-content/*.md /opt/svmesh/content/pages/
-cp your-updates/*.md /opt/svmesh/content/updates/
-
-# Rebuild so static content indexes include new files
-docker compose up -d --build
+docker compose restart svmesh-web
+docker compose logs -f svmesh-web
 ```
+
+Set `SVMESH_CONTENT_REPOSITORY` or `SVMESH_CONTENT_BRANCH` in `.env` to use a
+different GitHub repository or branch.
 
 ## Common Issues & Solutions
 
