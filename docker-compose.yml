@@ -6,6 +6,9 @@ services:
     container_name: svmesh-web
     ports:
       - "${NGINX_PORT:-8081}:8080"
+    environment:
+      SVMESH_CONTENT_REPOSITORY: ${SVMESH_CONTENT_REPOSITORY:-SusquehannaValleyMesh/SVMesh}
+      SVMESH_CONTENT_BRANCH: ${SVMESH_CONTENT_BRANCH:-main}
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
@@ -16,9 +19,14 @@ services:
       - /tmp
       - /var/cache/nginx:rw,uid=1001,gid=1001,mode=1777
       - /var/run/nginx:rw,uid=1001,gid=1001,mode=1777
+    volumes:
+      - svmesh-content:/usr/share/nginx/html/content
     healthcheck:
       test: ["CMD-SHELL", "test -f /usr/share/nginx/html/content/index/pages.json || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
+
+volumes:
+  svmesh-content:

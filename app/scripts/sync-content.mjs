@@ -8,10 +8,11 @@ const __dirname = path.dirname(__filename);
 const clientRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(clientRoot, "..");
 
-const sourcePagesDir = path.join(repoRoot, "content", "pages");
-const sourceUpdatesDir = path.join(repoRoot, "content", "updates");
+const sourceContentRoot = process.env.SVMESH_CONTENT_SOURCE || path.join(repoRoot, "content");
+const sourcePagesDir = path.join(sourceContentRoot, "pages");
+const sourceUpdatesDir = path.join(sourceContentRoot, "updates");
 
-const contentRoot = path.join(clientRoot, "public", "content");
+const contentRoot = process.env.SVMESH_CONTENT_TARGET || path.join(clientRoot, "public", "content");
 const targetPagesDir = path.join(contentRoot, "pages");
 const targetUpdatesDir = path.join(contentRoot, "updates");
 const targetIndexDir = path.join(contentRoot, "index");
