@@ -1,10 +1,14 @@
 ---
-title: The Architecture of SVMesh: Backbone, Base, and Ingress
+title: The Architecture of SVMesh's Meshtastic Network: Backbone, Base, and Ingress
 author: thed4nm4n
 tags: [Software, Tutorial, Deployment]
 ---
 
-To optimize mesh topology, the Susquehanna Valley Mesh community has defined three primary node archetypes used across the network. These archetypes help members understand how their nodes contribute to the overall health of the mesh and how to best utilize bandwidth by assigning appropriate Meshtastic roles. The three archetypes are **backbone nodes**, **base nodes**, and **ingress nodes**.
+To optimize mesh topology, the Susquehanna Valley Mesh community has defined three primary node archetypes used across the Meshtastic network. These archetypes help members understand how their nodes contribute to the overall health of the mesh and how to best utilize bandwidth by assigning appropriate Meshtastic roles. The three archetypes are **backbone nodes**, **base nodes**, and **ingress nodes**.
+
+::info[Meshtastic Only]
+This article is Meshtastic-specific. Meshcore works differently, and those differences are explained in our [Getting Started](/getting-started) guide.
+::info
 
 ## Backbone Nodes
 
@@ -53,4 +57,4 @@ The flow can be visualized as follows:
  └─────────────┘       └─────────────┘        └─────────────┘       └─────────────┘       └─────────────┘
 ```
 
-With the hop limit set to `5`, and zero-hop forwarding properly configured on base nodes, messages should be able to traverse at least three backbone nodes while still reliably delivering to base nodes and their associated ingress devices. Achieving this ideal behavior requires strong adherence to our [Recommended Settings](/recommended-settings). By configuring nodes consistently and cooperatively, we can continue to refine the mesh toward a more efficient and resilient topology.
+With the hop limit set to `5`, and zero-hop forwarding properly configured on base nodes, messages should be able to traverse at least three backbone nodes while still reliably delivering to base nodes and their associated ingress devices. Achieving this ideal behavior requires strong adherence to our [Recommended Meshtastic Settings](/meshtastic-settings). By configuring nodes consistently and cooperatively, we can continue to refine the mesh toward a more efficient and resilient topology.
