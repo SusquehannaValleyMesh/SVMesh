@@ -13,7 +13,7 @@ After flashing, power on your node. Before it can transmit, you must set your re
 A lot of newcomers get intrigued with running Meshtastic in HAM mode. Not only does this mode require an amateur license to use, it also is incompatible with our current mesh due to the lack of encryption. Do not enable HAM (Amateur radio) mode unless you know what you're doing.
 ::warning
 
-The Susquehanna Valley Mesh is currently operating on the default `LongFast` LoRa preset, so no additional channel configuration is required to connect at this time. This will change in the near future, as we are experiencing increased channel utilization and congestion on the current preset. Join us on our [socials](/socials) to stay informed as we begin planning and executing a migration to a new preset.
+The Susquehanna Valley Mesh is currently operating on the `LongFast` LoRa preset, which is NO LONGER the Meshtastic default; make sure to adjust this accordingly. This will change in the near future, as we are experiencing increased channel utilization and congestion on the current preset. Join us on our [socials](/socials) to stay informed as we begin planning and executing a migration to a new preset.
 
 ## Role Settings
 
